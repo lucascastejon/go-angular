@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+	<head>
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/app.css">
+
+		<script async type="text/javascript" src="/js/angular.min.js"></script>
+	</head>
+
+	<section ng-init="msgHeader = 'Sign-up' "></section>
+	<body ng-controller="userController as userCTRL">
+
+		<header-up></header-up>
+
+		<div class="list-group" ng-hide="status">
+			<form-user></form-user>
+		</div>
+
+		<div ng-show="status">
+			<alert-message></alert-message>
+			<login-user></login-user>
+		</div>
+
+		<script async type="text/javascript" src="/js/users-angular.js"></script>
+		<script async type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
+		<script async type="text/javascript" src="/js/extends-html.js"></script>
+		<script async type="text/javascript" src="/js/app.js"></script>
+	</body>
+</html>
