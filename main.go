@@ -34,7 +34,6 @@ func main() {
 	log.Fatal(http.ListenAndServe(":1357", router))
 }
 
-// Creates a new SQLite file 'gowels.db' and creates the 'reviews' table
 func SetupDB() {
 	var err error
 
