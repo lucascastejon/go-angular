@@ -6,7 +6,6 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
-	"os"
 	"fmt"
 
 	"github.com/gorilla/mux"
