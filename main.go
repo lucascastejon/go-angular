@@ -2,10 +2,10 @@
 package main
 
 import (
-	"database/sql"
 	"encoding/json"
-	"log"
+	"database/sql"
 	"net/http"
+	"log"
 	"fmt"
 
 	"github.com/gorilla/mux"
@@ -37,7 +37,7 @@ func main() {
 func SetupDB() {
 	var err error
 
-	db, err = sql.Open("postgres", "user=postgres dbname=melancholia  password='lucas' sslmode=disable")
+	db, err = sql.Open("postgres", "user=goangular dbname=angularjs  password='an13gul45ar' sslmode=disable")
 	if err != nil {
 		log.Printf("---Open PG---")
 		log.Fatal(err)
@@ -56,7 +56,6 @@ func UserCreate(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(201) 
 	
-	log.Printf("Usercreating")
 
 	decoder := json.NewDecoder(r.Body)
 	var user User
@@ -73,7 +72,8 @@ func UserCreate(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 	
-	fmt.Println(user.Username, user.Passwd)
+	log.Printf("User Creating: ")
+	fmt.Println(user.Username, user.Email)
 
 	stmt, err := tx.Prepare("INSERT into users_angular(username, email, passwd) values($1, $2, $3);")
 	if err != nil {
