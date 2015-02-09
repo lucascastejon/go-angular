@@ -1,23 +1,44 @@
-# Gowels
 
-This is a test application to communicate Angular and Go
+# Go - Angular
 
+This is a test application to communicate Angular and Go with Sign-up
+
+### The Go application is in the main.go file
 ### The Angular application is in the /assets folder
 
 ### Run
 
 Just run `go run main.go` and it will start a server at :1357 so enter `localhost:1357` and you'll see the angular application
 
-### What will work
-
-For now it is possible to send reviews for each gem, however it is not listing the reviews yet. To make sure it was saved, refresh the page and check in the reviews tab. You should see a list of all the reviews created.
 
 ### Database
 
-It is using sqlite to make it simple to use and test. Each time you run the server, the database file `gowels.db` is deleted and created again
+It is using PostgreSQL on version (9.3.5). 
 
-### PS
+# requirements
+### Install PostgreSQL and Config
+    Debian:
+		$ sudo apt-get install postgresql pgadmin3
 
-This Angular application was created following the course from CodeSchool Shaping up with AngularJS, a really good one for beginners like myself.
+    ArchLinux (manjaro):
+		$ sudo pacman -S postgresql pgadmin3
 
-by Gerep
+    User postgres
+		$ sudo -i -u postgres
+
+    Postgres SQL
+		$ psql
+		
+    Create melancholia user
+		$ CREATE ROLE goangular LOGIN SUPERUSER;
+		
+    Set melancholia password
+		$ ALTER USER goangular WITH PASSWORD 'an13gul45ar';
+    Create Database
+		$ CREATE DATABASE angularjs;
+
+More information: http://bullingox.blogspot.com.br/2014/07/install-postgresql-in-linux.html
+
+### Install GOlang and Config
+
+https://golang.org/doc/install
